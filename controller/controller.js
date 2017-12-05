@@ -118,8 +118,6 @@ module.exports = function (app,io){
             if(err){res.json(err);}
             else if(doc.length!=0){
                 console.log("Friend request : "+doc.length);
-                console.log("Friend request : friend request already sent "+doc);
-                res.send("Friend request already sent ");
             }
             else{
                 console.log("Friend request : "+doc.length);
@@ -140,8 +138,8 @@ module.exports = function (app,io){
                     //                console.log(doc);
                     //            }
                 });
-                io.to(users[req.body.friend_handle]).emit('message', req.body);
             }
+            io.to(users[req.body.friend_handle]).emit('message', req.body);
         });
     });
     

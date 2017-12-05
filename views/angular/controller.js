@@ -316,7 +316,6 @@ app.controller('myController',['$scope','socket','$http','$mdDialog','$compile',
                         <div class="popup-head-left pull-left"><img alt="pic">'+chat_friend+'</div>\
                         <div class="popup-head-right pull-right">\
                         <div class="btn-group">\
-                        <button class="chat-header-button" data-toggle="dropdown" type="button" aria-expanded="false">\
                         <ul role="menu" class="dropdown-menu pull-right">\
                         <li><a href="#">Block</a></li>\
                         <li><a href="#">Clear Chat</a></li>\
