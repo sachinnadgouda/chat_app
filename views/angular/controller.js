@@ -59,6 +59,7 @@ app.controller('myController',['$scope','socket','$http','$mdDialog','$compile',
     $scope.users=[];
     $scope.online_friends=[];
     $scope.allfriends=[];
+    $scope.pendingfriends=[];
     $scope.messages={};
     var monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October","November", "December"];
 
@@ -78,6 +79,11 @@ app.controller('myController',['$scope','socket','$http','$mdDialog','$compile',
     });
 
     socket.on('pending_list', function(data) {
+        console.log("Pending Friends list : "+data);
+        $scope.$apply(function () {
+            $scope.pendingfriends.push.apply($scope.pendingfriends,data);
+        });
+        console.log("Pending Friends list : "+$scope.pendingfriends);
 
     });
 

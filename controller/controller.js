@@ -13,38 +13,7 @@ module.exports = function (app,io){
     app.get('/',function(req,res){
         sess = req.session;
         res.sendFile(path.resolve(__dirname+"/../views/index.html"));
-    });
-    
-    app.post('/register',function(req,res){
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        res.setHeader("Access-Control-Allow-Method","'GET, POST, OPTIONS, PUT, PATCH, DELETE'");
-        var user={
-            "name":req.body.name,
-            "handle":req.body.handle,
-            "password":req.body.password,
-            "phone":req.body.phone,
-            "email":req.body.email,
-        };
-        console.log(user);
-        
-        models.user.findOne({"handle":req.body.handle},function(err,doc){
-            if(err){
-                res.json(err); 
-            }
-            if(doc == null){
-                models.user.create(user,function(err,doc){
-                    if(err) res.json(err);
-                    else{
-                        res.send("success");
-                    }
-                });
-            }else{
-                res.send("User already found");
-            }
-        })
-        
-    });
-    
+    });  
     
     var handle=null;
     var private=null;
@@ -100,6 +69,7 @@ module.exports = function (app,io){
                             friends.push(list[i].name);
                         }
                         else if (list[i].status=="Pending"){
+                            
                             pending.push(list[i].name);
                         }
                         else{

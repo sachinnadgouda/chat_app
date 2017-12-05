@@ -10,6 +10,7 @@ app.use(express.static('./'));
 app.use(session({secret: 'ssshhhhh'}));
 
 require("./controller/controller.js")(app,io);
+require("./controller/RegistrationController.js")(app,io);
 
 http.listen(8080,function(){
     console.log("Node Server is setup and it is listening on http://"+ip.address()+":8080");

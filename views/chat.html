@@ -112,7 +112,7 @@
                     <h3 class="box-title">Pending Friends</h3>
 
                     <div class="box-tools">
-                        <span class="label label-danger">{{pending.length}}</span>
+                        <span class="label label-danger">{{pendingfriends.length}}</span>
                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                         </button>
                         <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
@@ -122,7 +122,7 @@
                 <!-- /.box-header -->
                 <div class="box-body direct-chat-messages">
                     <ul class="users-list clearfix" >
-                        <li ng-repeat="friend in pending track by $index">
+                        <li ng-repeat="friend in pendingfriends track by $index">
                             <button ng-click="chat_popup(friend)"> 
                                 <img src="/views/dist/img/avatar2.png" alt="User Image">
                                 <a class="users-list-name">{{friend}}</a></button>
