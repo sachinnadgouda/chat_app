@@ -7,7 +7,11 @@ var session = require('express-session');
 var port = 3000;
 app.use(express.static('./')); 
 
-app.use(session({secret: 'ssshhhhh'}));
+app.use(session({
+	secret: 'testsecret',
+	resave: true,
+    saveUninitialized: true
+}));
 
 require("./controller/controller.js")(app,io);
 require("./controller/RegistrationController.js")(app,io);

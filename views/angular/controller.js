@@ -400,7 +400,6 @@ app.controller('myController',['$scope','socket','$http','$mdDialog','$compile',
         {
             if(chat_friend == popups[iii])
             {
-                console.log("sss");
 //                document.getElementById(popups[popups.length-1]+"01").className=document.getElementById(popups[popups.length-1]+"01").className.replace(/(?:^|\s)popup-box-on(?!\S)/g , '');
                 var chat_box=document.getElementById(popups[popups.length-1]+"01");
                 chat_box.parentElement.removeChild(chat_box);
