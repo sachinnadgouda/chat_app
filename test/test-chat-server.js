@@ -11,9 +11,9 @@ var options ={
   'force new connection': true
 };
 
-var chatUser1 = {'handle':'Tom'};
-var chatUser2 = {'handle':'Sally'};
-var chatUser3 = {'handle':'Dana'};
+var chatUser1 = {'handle':'test'};
+var chatUser2 = {'handle':'tester'};
+var chatUser3 = {'handle':'dev'};
   
 describe("Chat Server",function(){
 

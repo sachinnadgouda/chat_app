@@ -1,14 +1,19 @@
 def is_prime(number)
+	return "#{number} is prime" if number < 3
 	range_number = number -1
 	is_prime = true
 	(2..range_number).each do |n|
 		if number % n == 0 
-			puts "#{number} is not prime"
 			is_prime = false
 			break
 		end
 	end
-	puts "#{number} is prime" if is_prime
+	return "#{number} is prime" if is_prime
+end
+
+def is_prime?(num)
+   Math.sqrt(num).floor.downto(2).each {|i| return false if num % i == 0}
+   puts "#{num} is prime"
 end
 
 def print_fizzbuzz(number)
@@ -42,12 +47,13 @@ def print_x(number)
 end
 
 def check_prime
-	(3..10).each do |n|
-		is_prime(n)
+	(3..100).each do |n|
+		puts is_prime(n)
+		is_prime?(n)
 	end
 end
 
-#check_prime
+check_prime
 #print_fizzbuzz(15)
 #get_fibonacci(10)
 print_x(10)
