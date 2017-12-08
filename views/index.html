@@ -48,8 +48,11 @@
 
         <script src="/views/angular/controller.js"></script>
     </head>
-    <body style="background-image:url('/views/dist/img/background.png'); background-size:cover;">
-        
+
+    <body style="background-image:url('/views/dist/img/background.png'); background-size:cover;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;height=100%">
+        <div id="alertMsg" class="alert alert-danger alert-dismissable fade in" style="display: none">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        </div>
         <div ui-view="body"></div>
         
     </body>

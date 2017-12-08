@@ -457,6 +457,14 @@ app.controller('registerController',['$scope','encrypt','$http','$state',functio
         });
     }
 
+    function showAlert(msg){
+        $("#alertMsg").text(msg);
+        $("#alertMsg").show();
+        setTimeout(function() {
+            $("#alertMsg").hide();
+        }, 10000);
+    }
+
     $scope.login = function(){
         console.log("login");
         $scope.login_data.password=encrypt.hash($scope.login_data.password);
@@ -467,8 +475,12 @@ app.controller('registerController',['$scope','encrypt','$http','$state',functio
                 console.log("Inside success login");
                 $state.go('loggedin');
             }
+            else{
+              showAlert("Wrong Credentials");  
+            }
         })
             .error(function (data) {
+            showAlert("Something went wrong, please try again.");
             //add error handling
             console.log(data)
         });
