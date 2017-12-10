@@ -14,7 +14,7 @@ app.use(session({
 }));
 
 require("./controller/controller.js")(app,io);
-require("./controller/RegistrationController.js")(app,io);
+require("./controller/registration-controller.js")(app,io);
 
 http.listen(port,function(){
     console.log("Node Server is setup and it is listening on http://"+ip.address()+":"+port);
